@@ -56,9 +56,9 @@ GEM
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
     coderay (1.1.1)
-    coffee-rails (4.2.1)
+    coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
+      railties (>= 4.0.0, < 5.1.x)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -101,7 +101,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    json (2.0.3)
+    json (1.8.6)
     kgio (2.11.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -153,6 +153,11 @@ GEM
       nokogiri (~> 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.1)
       actionpack (= 5.0.1)
       activesupport (= 5.0.1)
@@ -164,6 +169,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    rdoc (4.3.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -171,6 +177,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sdoc (0.4.2)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
     slop (3.6.0)
     spring (2.0.1)
       activesupport (>= 4.2)
@@ -180,10 +189,13 @@ GEM
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.2.0)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
-      sprockets (>= 3.0.0)
+    sprockets-rails (2.3.3)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      sprockets (>= 2.8, < 4.0)
+    therubyrhino (2.0.4)
+      therubyrhino_jar (>= 1.7.3)
+    therubyrhino_jar (1.7.6)
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.6)
@@ -218,11 +230,11 @@ DEPENDENCIES
   binding_of_caller
   byebug
   carrierwave (~> 0.11.2)
-  coffee-rails (~> 4.2)
-  faker
+  coffee-rails (~> 4.1.0)
+  faker (~> 1.6, >= 1.6.5)
   fog-aws
   htmlbeautifier
-  jbuilder (~> 2.5)
+  jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
   listen (~> 3.0.5)
@@ -230,11 +242,15 @@ DEPENDENCIES
   mini_magick (~> 4.5, >= 4.5.1)
   pg (~> 0.18)
   pry
-  rails (~> 5.0.1)
+  rails (~> 5.0.0, >= 5.0.0.1)
+  rails_12factor
   sass-rails (~> 5.0)
+  sdoc (~> 0.4.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
+  sprockets-rails (= 2.3.3)
+  therubyrhino
+  turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
   unicorn
