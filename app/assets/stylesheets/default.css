@@ -16368,7 +16368,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .sliding-panel__close {
-    ("icon-close.svg") no-repeat 50% 50%;
     display: none;
     width: 40px;
     height: 40px;
