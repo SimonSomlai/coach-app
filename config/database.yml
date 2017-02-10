@@ -15,6 +15,6 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: d4mdvt6jd0saja
-  username: xzipxsvfuwydqw
+  database: d176n5ctcsng7
+  username: btmaeepeijucjr
   password: <%= ENV['COACH-WEBAPP_DATABASE_PASSWORD'] %>
