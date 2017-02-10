@@ -3282,7 +3282,6 @@ img.img-center {
 .breadcrumbs-v2 {
     text-align: center;
     position: relative;
-    background: ("../img/bg/11.jpg") no-repeat center;
 }
 
 .breadcrumbs-v2-in {
@@ -5060,7 +5059,6 @@ img.img-center {
     height: auto;
     padding: 50px 0;
     position: relative;
-    ("../img/bg/11.jpg") repeat fixed;
     background-size: cover;
 }
 
@@ -5080,7 +5078,6 @@ img.img-center {
     height: auto;
     padding: 50px 0;
     position: relative;
-    ("../img/bg/7.jpg") repeat fixed;
 }
 
 .bg-image-v2:before {
@@ -5115,7 +5112,6 @@ img.img-center {
     padding: 100px 0;
     position: relative;
     text-align: center;
-    ("../img/team/faces.jpg") 50% 0 repeat fixed;
 }
 
 .parallax-quote:after {
@@ -5135,7 +5131,6 @@ img.img-center {
     height: 100%;
     content: " ";
     position: absolute;
-    ("../img/patterns/gridtile.png") repeat;
 }
 /*Parallax Quote Inner*/
 .parallax-quote-in {
@@ -5217,9 +5212,7 @@ img.img-center {
 /*--------------------------------------------------
 	[15. Parallax Team]
 ----------------------------------------------------*/
-.parallax-team {
-    ("../img/team/faces.jpg") 50% 0 repeat fixed;
-}
+
 
 .parallax-team,
 .parallax-team .title-box-v2 {
@@ -5236,10 +5229,7 @@ img.img-center {
     position: absolute;
     background: rgba(255,255,255,0.9);
 }
-/*Parallax Team*/
-.parallax-team {
-    ("../img/team/faces.jpg") 50% 0 repeat fixed;
-}
+
 
 .parallax-team,
 .parallax-team .title-box-v2 {
@@ -5253,13 +5243,11 @@ img.img-center {
 	[16. Parallax Counter]
 ----------------------------------------------------*/
 .parallax-bg {
-    ("../img/patterns/5.png") repeat fixed;
 }
 /*Parallax Counter
 ------------------------------------*/
 .parallax-counter {
     padding: 30px 0;
-    ("../img/patterns/5.png") repeat fixed;
 }
 
 .parallax-counter .counters {
@@ -5280,7 +5268,6 @@ img.img-center {
 ------------------------------------*/
 .parallax-counter-v1 {
     padding: 60px 0;
-    ("../img/patterns/5.png") repeat fixed;
 }
 
 .parallax-counter-v1 .counters {
@@ -5304,7 +5291,6 @@ img.img-center {
 .parallax-counter-v2 {
     position: relative;
     padding: 80px 0 60px;
-    ("../img/patterns/16.png") repeat fixed;
 }
 
 .parallax-counter-v2:after {
@@ -5363,7 +5349,6 @@ img.img-center {
     overflow: hidden;
     text-align: center;
     position: relative;
-    ("../img/bg/25.jpg") 50% 0 fixed;
 }
 
 .parallax-counter-v3:after {
@@ -5444,7 +5429,6 @@ img.img-center {
     overflow: hidden;
     text-align: center;
     position: relative;
-    ("../img/bg/19.jpg") 50% 0 fixed;
 }
 
 .parallax-counter-v4:after {
@@ -5484,7 +5468,6 @@ img.img-center {
 ----------------------------------------------------*/
 .flat-bg-block-v1 {
     padding: 40px 0;
-    ("../img/patterns/16.png") repeat;
 }
 
 .flat-bg-block-v1 .checked-list.first-child {
@@ -6128,7 +6111,6 @@ img.img-center {
 .quote-v1 {
     padding: 170px 0 150px;
     text-align: center;
-    ("../img/patterns/5.png") repeat;
 }
 
 .quote-v1 p {
@@ -6277,19 +6259,16 @@ img.img-center {
 }
 
 .interactive-slider-v1.img-v1 {
-    ("../img/bg/18.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .interactive-slider-v1.img-v2 {
-    ("../img/bg/19.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .interactive-slider-v1.img-v3 {
-    ("../img/bg/18.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
 }
@@ -6334,7 +6313,6 @@ img.img-center {
     padding: 200px 0;
     position: relative;
     text-align: center;
-    ("../img/bg/18.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
 }
@@ -6344,32 +6322,27 @@ img.img-center {
 }
 
 .interactive-slider-v2.img-v1 {
-    ("../img/bg/25.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .interactive-slider-v2.img-v2 {
-    ("../img/bg/14.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .interactive-slider-v2.img-v3 {
-    ("../img/bg/img8.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .interactive-slider-v2.img-v4 {
-    ("../img/bg/img9.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .interactive-slider-v2.intro-promo-img {
     padding: 80px 0;
-    ("../img/intro/promo.jpg") repeat-x fixed center center / cover;
     -webkit-animation: infiniteBackground 65s linear infinite;
     -moz-animation: infiniteBackground 65s linear infinite;
     animation: infiniteBackground 65s linear infinite;
@@ -7945,7 +7918,6 @@ img.img-center {
     padding: 100px 0;
     position: relative;
     text-align: center;
-    background: #333 url("../img/bg/19.jpg") 50% 0 fixed;
     background-size: cover;
     background-position: center center;
 }
@@ -7967,7 +7939,6 @@ img.img-center {
     height: 100%;
     content: " ";
     position: absolute;
-    ("../img/patterns/gridtile.png") repeat;
 }
 
 .parallax-twitter-in {
@@ -8014,7 +7985,6 @@ img.img-center {
 .clients-section {
     padding: 60px 0;
     position: relative;
-    background: #333 url("../img/bg/7.jpg") 50% fixed;
     background-size: cover;
     background-position: center center;
 }
@@ -8036,7 +8006,6 @@ img.img-center {
     height: 100%;
     content: " ";
     position: absolute;
-    ("../img/patterns/gridtile.png") repeat;
 }
 
 .clients-section .title-v1 h2,
@@ -9001,7 +8970,6 @@ img.img-center {
 .purchase {
     padding: 25px 0 30px;
     border-bottom: solid 1px #eee;
-    ("../img/patterns/breadcrumbs.png") repeat;
 }
 
 .purchase p {
@@ -9474,7 +9442,6 @@ a.thumbnail {
     padding: 40px 0;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
-    ("../img/breadcrumbs.png") repeat;
 }
 /*Gallery Page
 ------------------------------------*/
@@ -9680,7 +9647,6 @@ ul.blog-tags a:hover i {
 
 .slider-promo-info-bg {
     padding: 25px 20px 20px;
-    ("../img/bg-black.png") repeat;
 }
 
 .slider-promo-info span.big-size {
@@ -10407,7 +10373,6 @@ img.img-mouse {
 .service-info {
     position: relative;
     padding: 40px 0 50px;
-    ("../img/patterns/17.png") repeat;
 }
 
 .service-info .info-description {
@@ -10456,7 +10421,6 @@ img.img-mouse {
 ------------------------------------*/
 .testimonials-bs {
     padding: 50px 0;
-    ("../img/bg/16.jpg") 50% 0 repeat fixed;
 }
 
 .testimonials-bs .headline-center-v2 span.author {
@@ -10559,7 +10523,6 @@ a:hover {
     box-shadow: 0 0 5px #ccc;
     margin-left: auto !important;
     margin-right: auto !important;
-    ("../img/patterns/15.png") repeat;
 }
 /*Hiding arrows for select field in IE*/
 select::-ms-expand {
@@ -19869,7 +19832,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-lightbox .cbp-popup-prev {
-    ("../img/cbp-sprite.png") no-repeat scroll 0 0 transparent;
     width: 44px;
     height: 44px;
     top: 0;
@@ -19883,7 +19845,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-singlePage .cbp-popup-prev {
-    ("../img/cbp-sprite.png") no-repeat scroll 0 -92px transparent;
     width: 44px;
     height: 44px;
     margin: auto;
@@ -19898,7 +19859,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-lightbox .cbp-popup-next {
-    ("../img/cbp-sprite.png") no-repeat scroll -46px 0 transparent;
     width: 44px;
     height: 44px;
     top: 0;
@@ -19912,7 +19872,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-singlePage .cbp-popup-next {
-    ("../img/cbp-sprite.png") no-repeat scroll -46px -92px transparent;
     width: 44px;
     height: 44px;
     margin: auto;
@@ -19927,7 +19886,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-lightbox .cbp-popup-close {
-    ("../img/cbp-sprite.png") no-repeat scroll -92px 0 transparent;
     height: 40px;
     width: 40px;
     right: 20px;
@@ -19939,7 +19897,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-singlePage .cbp-popup-close {
-    ("../img/cbp-sprite.png") no-repeat scroll -92px -92px transparent;
     height: 44px;
     width: 44px;
     margin: auto;
@@ -20325,7 +20282,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-singlePageInline .cbp-popup-close {
-    ("../img/cbp-sprite.png") no-repeat scroll -92px 0 transparent;
     height: 40px;
     width: 40px;
     right: 20px;
@@ -20613,7 +20569,6 @@ you can use the generic selector below, but it's slower:
     bottom: 0;
     left: 0;
     margin: auto;
-    ("../img/cbp-sprite.png") no-repeat;
     height: 10px;
     width: 7px;
 }
@@ -20737,7 +20692,6 @@ you can use the generic selector below, but it's slower:
 
 .cbp-slider .cbp-nav-next:after,
 .cbp-slider .cbp-nav-prev:after {
-    ("../img/cbp-sprite.png") no-repeat;
     width: 44px;
     height: 44px;
 }
@@ -20793,7 +20747,6 @@ you can use the generic selector below, but it's slower:
 
 .cbp-slider-edge .cbp-nav-next:after,
 .cbp-slider-edge .cbp-nav-prev:after {
-    ("../img/cbp-sprite.png") no-repeat;
     width: 9px;
     height: 16px;
 }
@@ -20882,7 +20835,6 @@ you can use the generic selector below, but it's slower:
     bottom: 0;
     left: 0;
     margin: auto;
-    ("../img/cbp-sprite.png") no-repeat;
     width: 9px;
     height: 16px;
 }
@@ -24362,7 +24314,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-lightbox .cbp-popup-prev {
-    ("../img/cbp-sprite.png") no-repeat scroll 0 0 transparent;
     width: 44px;
     height: 44px;
     top: 0;
@@ -24376,7 +24327,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-singlePage .cbp-popup-prev {
-    ("../img/cbp-sprite.png") no-repeat scroll 0 -92px transparent;
     width: 44px;
     height: 44px;
     margin: auto;
@@ -24391,7 +24341,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-lightbox .cbp-popup-next {
-    ("../img/cbp-sprite.png") no-repeat scroll -46px 0 transparent;
     width: 44px;
     height: 44px;
     top: 0;
@@ -24405,7 +24354,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-singlePage .cbp-popup-next {
-    ("../img/cbp-sprite.png") no-repeat scroll -46px -92px transparent;
     width: 44px;
     height: 44px;
     margin: auto;
@@ -24420,7 +24368,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-lightbox .cbp-popup-close {
-    ("../img/cbp-sprite.png") no-repeat scroll -92px 0 transparent;
     height: 40px;
     width: 40px;
     right: 20px;
@@ -24432,7 +24379,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-singlePage .cbp-popup-close {
-    ("../img/cbp-sprite.png") no-repeat scroll -92px -92px transparent;
     height: 44px;
     width: 44px;
     margin: auto;
@@ -24818,7 +24764,6 @@ you can use the generic selector below, but it's slower:
 }
 
 .cbp-popup-singlePageInline .cbp-popup-close {
-    ("../img/cbp-sprite.png") no-repeat scroll -92px 0 transparent;
     height: 40px;
     width: 40px;
     right: 20px;
@@ -25106,7 +25051,6 @@ you can use the generic selector below, but it's slower:
     bottom: 0;
     left: 0;
     margin: auto;
-    ("../img/cbp-sprite.png") no-repeat;
     height: 10px;
     width: 7px;
 }
@@ -25230,7 +25174,6 @@ you can use the generic selector below, but it's slower:
 
 .cbp-slider .cbp-nav-next:after,
 .cbp-slider .cbp-nav-prev:after {
-    ("../img/cbp-sprite.png") no-repeat;
     width: 44px;
     height: 44px;
 }
@@ -25286,7 +25229,6 @@ you can use the generic selector below, but it's slower:
 
 .cbp-slider-edge .cbp-nav-next:after,
 .cbp-slider-edge .cbp-nav-prev:after {
-    ("../img/cbp-sprite.png") no-repeat;
     width: 9px;
     height: 16px;
 }
@@ -25375,7 +25317,6 @@ you can use the generic selector below, but it's slower:
     bottom: 0;
     left: 0;
     margin: auto;
-    ("../img/cbp-sprite.png") no-repeat;
     width: 9px;
     height: 16px;
 }
