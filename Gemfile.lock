@@ -243,5 +243,8 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   will_paginate-bootstrap
 
+RUBY VERSION
+   ruby 2.3.1p112
+
 BUNDLED WITH
    1.13.7
