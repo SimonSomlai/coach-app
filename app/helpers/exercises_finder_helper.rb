@@ -39,7 +39,7 @@ module ExercisesFinderHelper
 
   def filter_exercises(exercises) # Filters exercises by params
     exercises = exercises.where(["lower(title) LIKE ?","%#{params[:name]}%"]) if params[:name].present?
-    exercises = exercises.where(["lower(exercise_type) LIKE ?","%#{params[:focus]}%"]) if specific_focus?
+    exercises = exercises.where(["lower(focus) LIKE ?","%#{params[:focus]}%"]) if specific_focus?
     exercises
   end
 end

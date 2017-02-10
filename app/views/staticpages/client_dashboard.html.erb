@@ -33,22 +33,22 @@
                                         </div>
                                     </div>
                                     <h3><%= @client.name  %></h3>
-
                                     <ul class="list-unstyled user_data">
                                         <li>
                                             <i class="fa fa-map-marker user-profile-icon"></i>
-                                            San Francisco, California, USA
+                                            <%= @client.address %>
                                         </li>
 
                                         <li>
                                             <i class="fa fa-phone user-profile-icon"></i>
-                                            Software Engineer
+                                          <%= @client.phone %>
                                         </li>
 
                                         <li class="m-top-xs">
                                             <i class="fa fa-envelope user-profile-icon"></i>
                                             <%= @client.email %>
                                         </li>
+
                                     </ul>
                                     <%= link_to edit_user_path(id: @client.id), class: "btn btn-success" do %>
                                     <i class="fa fa-edit m-right-xs"></i>

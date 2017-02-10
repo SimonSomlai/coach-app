@@ -15,4 +15,6 @@ class Training < ApplicationRecord
  # Each training can belong to a different cliënt and cliënts can have different trainings
  has_many :client_trainings, dependent: :destroy
  has_many :clients, through: :client_trainings
+
+ validates :title, :description, :time, presence: true
 end

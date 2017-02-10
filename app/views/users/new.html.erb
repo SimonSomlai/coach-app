@@ -8,7 +8,7 @@
     <div class="login_wrapper">
         <div id="register" class="form">
             <section class="login_content">
-                <%= form_for @user do |f| %>
+                <%= form_for @user, url: @url do |f| %>
                 <h1>Create Account</h1>
                 <%= render "shared/errors", object: @user  %>
                 <div>

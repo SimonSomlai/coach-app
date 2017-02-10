@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_filter :logged_in_user?, except: [:new, :create]
 
   def new
-    @user = User.new
+    @url = users_path
+    @user = Trainer.new
   end
 
   def create

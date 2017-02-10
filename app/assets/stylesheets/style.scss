@@ -10,6 +10,11 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+.promo-bg-pattern-v1-dark {
+    background: url(asset-path("bg.jpg"));
+    background-size: cover;
+}
+
 body a {
     text-decoration: none;
 }

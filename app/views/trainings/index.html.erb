@@ -109,19 +109,19 @@
                                 <%= form_for @training, html: {id: "demo-form2", class: "form-horizontal form-label-left"} do |f| %>
                                 <%= render "shared/errors", object: @training %>
                                 <div class="form-group">
-                                    <%= label :title, "Naam", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <%= label :title, "Naam*", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <%= f.text_field :title, class: "form-control col-md-7 col-xs-12" %>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <%= label :description, "Beschrijving", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <%= label :description, "Beschrijving*", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <%= f.text_area :description, class: "form-control col-md-7 col-xs-12" %>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <%= label :time, "Tijdsduur", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <%= label :time, "Tijdsduur*", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <%= f.text_field :time, class: "form-control col-md-7 col-xs-12" %>
                                     </div>
@@ -145,7 +145,7 @@
                                                 <a href="#" class="fa-star fa"></a>
                                             </div>
                                         </div>
-                                        <%= f.text_field :level, class: "hidden form-control col-md-7 col-xs-12" %>
+                                        <%= f.text_field :level, class: "hidden form-control col-md-7 col-xs-12", value: "1" %>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -209,18 +209,6 @@
 <%= content_for :js do %>
 <%= javascript_include_tag "star","switch", "jquery-ui", "select2" %>
 <script>
-document.onreadystatechange = function () {
-  var state = document.readyState
-  if (state == 'interactive') {
-       document.getElementById('contents').style.visibility="hidden";
-  } else if (state == 'complete') {
-      setTimeout(function(){
-         document.getElementById('interactive');
-         document.getElementById('load').style.visibility="hidden";
-         document.getElementById('contents').style.visibility="visible";
-      },1000);
-  }
-}
     $(document).ready(function () {
         $(".stars").starrr();
 
@@ -308,8 +296,14 @@ document.onreadystatechange = function () {
                     $(".profile-grid").attr("style", "height: 0px; overflow: none;")
                     $("p.no-exercises").text("Er zijn geen oefeningen teruggevonden voor die criteria")
                 }
+                console.log(data)
                 objects = data.slice(0, data.length / 2)
-                images = data.slice(data.length / 2, -1)
+                if(data.length <= 2){
+                  images = [data[1]]
+                } else {
+                  images = data.slice(data.length / 2, -1)
+                }
+                console.log(images)
                 for (var i = 0, l = objects.length; i < l; i++) {
                     id = objects[i].id
                     type = objects[i].exercise_type

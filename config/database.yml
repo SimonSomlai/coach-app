@@ -12,7 +12,9 @@ test:
   database: coach-app_test
 
 production:
-  <<: *default
-  database: coach-app_production
-  username: coach-app
-  password: <%= ENV['COACH-APP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: d4mdvt6jd0saja
+  username: xzipxsvfuwydqw
+  password: <%= ENV['COACH-WEBAPP_DATABASE_PASSWORD'] %>
