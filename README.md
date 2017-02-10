@@ -17,6 +17,21 @@
 
 # Pics Or It Didn't Happen
 
+## Landing Page
+<img src="landing.png"/>
+
+## Dashboard
+<img src="dashboard.png"/>
+
+## Exercise Library
+<img src="exercises.png"/>
+
+## Training Detail
+<img src="index.png"/>
+
+## Cliënt View
+<img src="client.png"/>
+
 # To Do
 
 - Export trainings to PDF
