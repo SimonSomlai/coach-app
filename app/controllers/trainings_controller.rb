@@ -29,8 +29,9 @@ class TrainingsController < ApplicationController
     @training = current_user.trainings.build(training_params)
     if @training.save
       unless params[:exercises].blank?
+        binding.pry
         params[:exercises].each_with_index do |exercise_id, position|
-          exercise_id = exercise_id.gsub!('exercise-', '').to_i
+          exercise_id = exercise_id.gsub('exercise-', '').to_i
           AssignedTraining.create!(exercise_id: exercise_id, training_id: @training.id, position: position + 1)
         end
       end
@@ -54,6 +55,7 @@ class TrainingsController < ApplicationController
     @training.exercises.destroy_all # There's probably a better way (like checking for differences)
     if @training.update_attributes(training_params)
       unless params[:exercises].blank?
+        binding.pry
         params[:exercises].each_with_index do |exercise_id, position|
           exercise_id = exercise_id.gsub('exercise-', '').to_i
           AssignedTraining.create!(training_id: @training.id, exercise_id: exercise_id, position: position + 1)
