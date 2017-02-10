@@ -10,5 +10,6 @@ Bundler.require(*Rails.groups)
 
 module CoachApp
   class Application < Rails::Application
+    
   end
 end
