@@ -131,7 +131,6 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    puma (3.7.0)
     rack (2.0.1)
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
@@ -231,7 +230,6 @@ DEPENDENCIES
   mini_magick (~> 4.5, >= 4.5.1)
   pg (~> 0.18)
   pry
-  puma (~> 3.0)
   rails (~> 5.0.1)
   sass-rails (~> 5.0)
   spring
