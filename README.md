@@ -7,6 +7,9 @@
 - Crudding trainings based on the exercise library for specific cliënts (main feature)
 - Allow cliënts to see the training, check its exercises and mark it as completed (and hopefully also do the workout lol)
 
+<b>User demo login:</b> demo@email.com & password <br/>
+<b>Client demo login:</b> sara@email.com & password
+
 # Tech Stack
 
 - <b>Front:</b> HTML, CSS, JS, Ajax
@@ -14,6 +17,7 @@
 - <b>Db:</b> Postgresql
 - <b>JS Libraries:</b> select2, starr, mask, flot, lightgallery & switchery
 - <b>Other:</b> Bodybuilding.com scraping, custom login system, carrierwave file upload to aws, pagination, filter queries, 2 join tables & 1 self join table
+
 
 # Pics Or It Didn't Happen
 
