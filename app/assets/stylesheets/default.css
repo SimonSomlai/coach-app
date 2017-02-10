@@ -622,19 +622,7 @@ a.btn-u-xs {
 .btn-group > .btn-u:first-child {
     margin-left: 0;
 }
-/*For FF Only*/
-@-moz-document url-prefix() {
-    .footer-subsribe .btn-u {
-        padding-bottom: 4px;
-    }
-}
-@media (max-width: 768px) {
-     @-moz-document url-prefix(){
-        .btn-u {
-            padding-bottom: 6px;
-        }
-    }
-}
+
 /*Buttons Color*/
 .btn-u.active,
 .btn-u:active,
@@ -2891,10 +2879,7 @@ img.img-center {
 .scroll-btn-icon-dark:before {
     background: #333;
 }
--------------------------------------------------------------*/
-/*--------------------------------------------------
-	[1. Promo Blocks]
-----------------------------------------------------*/
+
 
 /*Promo Background Fixed*/
 .promo-bg-fixed {
