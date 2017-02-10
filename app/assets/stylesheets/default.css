@@ -5,11 +5,6 @@
  * Author: @htmlstream
  * Website: http://htmlstream.com
 */
-/*Promo Background Images*/
-.promo-bg-pattern-v1-dark {
-    (image-url("bg.jpg"));
-    background-size: cover;
-}
 /*Thematic Break
 ------------------------------------*/
 hr {
