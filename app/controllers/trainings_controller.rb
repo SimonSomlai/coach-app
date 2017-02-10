@@ -29,8 +29,8 @@ class TrainingsController < ApplicationController
     @training = current_user.trainings.build(training_params)
     if @training.save
       unless params[:exercises].blank?
-        params[:exercises].each_with_index do |exercise, position|
-          exercise_id = exercise.gsub!('exercise-', '').to_i
+        params[:exercises].each_with_index do |exercise_id, position|
+          exercise_id = exercise_id.gsub!('exercise-', '').to_i
           AssignedTraining.create!(exercise_id: exercise_id, training_id: @training.id, position: position + 1)
         end
       end
