@@ -1,0 +1,400 @@
+<div class="container body">
+    <div class="main_container">
+        <%= render "shared/admin_menu" %>
+        <div class="right_col" role="main" style="min-height: 1164px;">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>Klantprofiel</h3>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2><%= @client.name %>
+                                </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                                    <div class="profile_img">
+                                        <div id="crop-avatar">
+                                            <%= image_tag @client.image.url, class:"img-responsive avatar-view" %>
+                                        </div>
+                                    </div>
+                                    <h3><%= @client.name  %></h3>
+
+                                    <ul class="list-unstyled user_data">
+                                        <li>
+                                            <i class="fa fa-map-marker user-profile-icon"></i>
+                                            <%= @client.address %>
+                                        </li>
+
+                                        <li>
+                                            <i class="fa fa-phone user-profile-icon"></i>
+                                          <%= @client.phone %>
+                                        </li>
+
+                                        <li class="m-top-xs">
+                                            <i class="fa fa-envelope user-profile-icon"></i>
+                                            <%= @client.email %>
+                                        </li>
+
+                                    </ul>
+                                    <strong>Extra info;</strong>
+                                    <p>
+                                      <%= raw @client.information %>
+                                    </p>
+                                    <%= link_to edit_user_client_path(id: @client.id), class: "btn btn-success" do %>
+                                    <i class="fa fa-edit m-right-xs"></i>
+                                    Profiel Bewerken
+                                    <% end %>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">💪 Geef Training!</button>
+                                    <br>
+                                </div>
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+
+                                    <div class="profile_title">
+                                        <div class="col-md-6">
+                                            <h2>Afgelegde Trainingen</h2>
+                                        </div>
+                                    </div>
+                                    <!-- start of user-activity-graph -->
+                                    <div id="graph_bar" style="width: 100%; height: 280px; position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        <svg height="280" version="1.1" width="756" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.75px;">
+                                            <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël @@VERSION</desc>
+                                            <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+                                            <text
+                                                x="34.84375"
+                                                y="201.207564890125"
+                                                text-anchor="end"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan>
+                                            </text>
+                                            <path fill="none" stroke="#aaaaaa" d="M47.34375,201.207564890125H731" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                                            <text
+                                                x="34.84375"
+                                                y="157.15567366759376"
+                                                text-anchor="end"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal">
+                                                <tspan dy="4.01504866759376" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan>
+                                            </text>
+                                            <path fill="none" stroke="#aaaaaa" d="M47.34375,157.15567366759376H731" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                                            <text
+                                                x="34.84375"
+                                                y="113.1037824450625"
+                                                text-anchor="end"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal">
+                                                <tspan dy="4.010032445062507" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">200</tspan>
+                                            </text>
+                                            <path fill="none" stroke="#aaaaaa" d="M47.34375,113.1037824450625H731" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                                            <text
+                                                x="34.84375"
+                                                y="69.05189122253125"
+                                                text-anchor="end"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal">
+                                                <tspan dy="4.005016222531253" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">300</tspan>
+                                            </text>
+                                            <path fill="none" stroke="#aaaaaa" d="M47.34375,69.05189122253125H731" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                                            <text
+                                                x="34.84375"
+                                                y="25"
+                                                text-anchor="end"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal">
+                                                <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">400</tspan>
+                                            </text>
+                                            <path fill="none" stroke="#aaaaaa" d="M47.34375,25H731" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                                            <text
+                                                x="696.8171875"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,158.162,723.3216)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Oct</tspan>
+                                            </text>
+                                            <text
+                                                x="628.4515625"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,123.3105,664.9867)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Sep</tspan>
+                                            </text>
+                                            <text
+                                                x="560.0859375"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,89.1308,604.9197)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Aug</tspan>
+                                            </text>
+                                            <text
+                                                x="491.7203125"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,56.4511,543.1207)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Jul</tspan>
+                                            </text>
+                                            <text
+                                                x="423.3546875"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,21.2636,485.6383)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Jun</tspan>
+                                            </text>
+                                            <text
+                                                x="354.9890625"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,-13.752,428.44)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">May</tspan>
+                                            </text>
+                                            <text
+                                                x="286.6234375"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,-46.9317,367.5205)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Apr</tspan>
+                                            </text>
+                                            <text
+                                                x="218.2578125"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,-81.6114,309.1721)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Mar</tspan>
+                                            </text>
+                                            <text
+                                                x="149.8921875"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,-115.7989,250.2553)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Feb</tspan>
+                                            </text>
+                                            <text
+                                                x="81.5265625"
+                                                y="213.707564890125"
+                                                text-anchor="middle"
+                                                font-family="sans-serif"
+                                                font-size="12px"
+                                                stroke="none"
+                                                fill="#888888"
+                                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;"
+                                                font-weight="normal"
+                                                transform="matrix(0.5,-0.866,0.866,0.5,-149.6505,189.6064)">
+                                                <tspan dy="4.004439890125013" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Jan</tspan>
+                                            </text>
+                                            <rect x="55.889453125" y="165.9660519121" width="24.137109374999998" height="35.241512978025014" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="124.255078125" y="146.14270086196095" width="24.137109374999998" height="55.06486402816407" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="192.62070312499998" y="123.67623633847" width="24.137109374999998" height="77.53132855165501" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="260.986328125" y="102.53132855165501" width="24.137109374999998" height="98.67623633847" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="329.35195312499997" y="84.47005315041719" width="24.137109374999998" height="116.73751173970783" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="397.717578125" y="62.884626451376874" width="24.137109374999998" height="138.32293843874814" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="466.08320312499995" y="48.34750234794157" width="24.137109374999998" height="152.86006254218344" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="534.448828125" y="74.77863708146032" width="24.137109374999998" height="126.4289278086647" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="602.814453125" y="95.48302595605" width="24.137109374999998" height="105.72453893407501" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                            <rect x="671.180078125" y="108.25807441058407" width="24.137109374999998" height="92.94949047954094" rx="0" ry="0" fill="#26b99a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+                                        </svg>
+                                        <div class="morris-hover morris-default-style" style="left: 160.258px; top: 102px; display: none;">
+                                            <div class="morris-hover-row-label">Mar</div>
+                                            <div class="morris-hover-point" style="color: #26B99A">
+                                                Hours worked: 176
+                                            </div>
+                                            <div class="morris-hover-point" style="color: #34495E">
+                                                SORN: -
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of user-activity-graph -->
+
+                                    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                            <!-- <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Berichten</a>
+                  </li> -->
+                                            <li role="presentation" class="active">
+                                                <a href="#tab_content2" role="tab" id="home-tab" data-toggle="tab" aria-expanded="true">Actieve Trainingen</a>
+                                            </li>
+                                        </ul>
+                                        <div id="myTabContent" class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="tab_content2" aria-labelledby="home-tab">
+
+                                                <!-- start user projects -->
+                                                <table class="data table table-striped no-margin">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Training</th>
+                                                            <th>Datum</th>
+                                                            <th>Intensiteit</th>
+                                                            <th class="hidden-phone">Status</th>
+                                                            <th>Bewerken</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <% @trainings.each_with_index do |training, i| %>
+                                                        <tr>
+                                                            <td><%= i + 1 %></td>
+                                                            <td><%= training.title %></td>
+                                                            <td><%= training.date %></td>
+                                                            <td class="vertical-align-mid">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-success" data-transitiongoal="35" aria-valuenow="35" style="width: 35%;"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="hidden-phone"><%= training.status ? "Voltooid" : "Onvoltooid" %></td>
+                                                            <td>
+                                                                <%= link_to training_path(training.training_id), class: "btn btn-primary btn-xs" do %>
+                                                                <i class="fa fa-search"></i>
+                                                                <% end %>
+                                                                <%= link_to edit_training_path(training.training_id), class: "btn btn-info btn-xs" do %>
+                                                                <i class="fa fa-pencil"></i>
+                                                                <% end %>
+                                                                <%= link_to training_verwijderen_path(id: training.id, client_id: @client.id), method: :delete, data: {confirm: "Ben je zeker dat je deze training wilt verwijderen uit de actieve trainingen van #{@client.name}?"}, class: "btn btn-danger btn-xs" do %>
+                                                                <i class="fa fa-trash-o"></i>
+                                                                <% end %>
+                                                            </td>
+                                                        </tr>
+                                                        <% end %>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div class="x_content">
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">Training Opstellen Voor
+                                        <%= @client.name.capitalize %></h4>
+                                </div>
+                                <div class="modal-body cf">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <%= form_for @training, url: training_geven_path, html: { multipart: true, id: "demo-form2", class: "form-horizontal form-label-left"} do |f| %>
+                                        <%= render "shared/errors", object: @training %>
+                                        <div class="form-group">
+                                            <%= f.label :training_id, "Welke training wilt u geven?", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <%= select_tag :training_id, options_from_collection_for_select(current_user.trainings, "id", "title"), multiple: false, class: "form-control", id: "datepicker" %>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <%= f.label :date, "Wanneer moet de training voltooid worden? (dd/mm/yy - hh:mm)", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <%= f.text_field :date, data: {inputmask:"'mask': '99/99/9999 - 99:99'"} , class: "form-control", id: "datepicker"  %>
+                                            </div>
+                                            <!-- <input type="text" class="form-control" > -->
+                                        </div>
+                                        <div class="form-group">
+                                            <%= f.text_field :client_id, value: @client.id, class: "hidden" %>
+                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <%= f.submit "Training geven!", class: "text-center btn btn-success" %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%= content_for :js do %>
+            <%= javascript_include_tag "mask" %>
+            <script>
+                $(document).ready(function () {
+                    $(":input").inputmask();
+                });
+            </script>
+            <% end %>

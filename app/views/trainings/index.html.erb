@@ -1,0 +1,364 @@
+<% content_for :css do %>
+<%= stylesheet_link_tag "gentella", "select2", "switch", "style" %>
+<% end %>
+<% content_for :body_class do  %>
+<%= "nav-md" %>
+<% end %>
+<div class="container body">
+    <div class="main_container">
+        <% if current_user_is_trainer? %>
+        <%= render "shared/admin_menu" %>
+    <% else %>
+        <%= render "shared/client_menu" %>
+        <% end %>
+        <div class="right_col" role="main" style="min-height: 914px;">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>Mijn Trainingen
+                        </h3>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row table-fade <%= table_hidden? %>">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>
+                                    <i class="fa fa-file-text-o"></i>
+                                    Trainingen |
+                                    <a onclick="createForm()" href="#" class="open-form btn btn-sm btn-round btn-success">
+                                        <i class="fa fa-plus"></i>
+                                        <%= @action %>
+                                        Training</a>
+                                </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table class="table table-striped projects">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 1%">#</th>
+                                            <th style="width: 20%">Naam</th>
+                                            <th>Oefeningen</th>
+                                            <th>Niveau</th>
+                                            <th>Tijdsduur</th>
+                                            <th style="width: 20%">Acties</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% @trainings.each_with_index do |training, i| %>
+                                        <tr>
+                                            <td><%= i + 1  %></td>
+                                            <td>
+                                                <a><%= training.title  %></a>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <%= find_exercises_for_training(training) %>
+                                                </p>
+                                            </td>
+                                            <td class="project_progress">
+                                                <div class="progress progress_sm">
+                                                    <div class="progress-bar bg-green" role="progressbar" style="width: <%= training.level * 20 %>%"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-success btn-xs"><%= training.time %></button>
+                                            </td>
+                                            <td>
+                                                <%= link_to training_path(training), class: "btn btn-primary btn-xs" do %>
+                                                <i class="fa fa-search"></i>
+                                                <% end %>
+                                                <%= link_to edit_training_path(training), class: "btn btn-info btn-xs" do %>
+                                                <i class="fa fa-pencil"></i>
+                                                <% end %>
+                                                <%= link_to training_path(training), method: :delete, data: {confirm: "Ben je zeker dat je deze training wilt verwijderen?"}, class: "btn btn-danger btn-xs" do %>
+                                                <i class="fa fa-trash-o"></i>
+                                                <% end %>
+                                            </td>
+                                        </tr>
+                                        <% end %>
+                                        <%= will_paginate @trainings, renderer: BootstrapPagination::Rails, class: "pagination pagination-centered" %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="create-form" class="row create-form <%= form_hidden? %>">
+                    <div class="col-md-12 col-sm-12 col-xs-12 margin-top" style="display: block;">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>
+                                    <i class="fa fa-file-text-o"></i>
+                                    <%= @action %>
+                                    Training
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox <%= table_hidden?  %>">
+                                    <li >
+                                        <a onclick="closeForm();">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <br>
+                                <%= form_for @training, html: {id: "demo-form2", class: "form-horizontal form-label-left"} do |f| %>
+                                <%= render "shared/errors", object: @training %>
+                                <div class="form-group">
+                                    <%= label :title, "Naam", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <%= f.text_field :title, class: "form-control col-md-7 col-xs-12" %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <%= label :description, "Beschrijving", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <%= f.text_area :description, class: "form-control col-md-7 col-xs-12" %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <%= label :time, "Tijdsduur", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <%= f.text_field :time, class: "form-control col-md-7 col-xs-12" %>
+                                    </div>
+                                </div>
+                                <div class="form-group loading">
+                                    <%= label :exercises, "Oefeningen", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <%= select_tag :exercises, options_from_collection_for_select(@exercises, "id", "title"), multiple: true %>
+                                    </div>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">💪 Zoek In Oefeningen!</button>
+                                </div>
+                                <div class="form-group">
+                                    <%= label :level, "Niveau", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div>
+                                            <div class="starrr stars">
+                                                <a href="#" class="fa-star fa"></a>
+                                                <a href="#" class="fa-star fa"></a>
+                                                <a href="#" class="fa-star fa"></a>
+                                                <a href="#" class="fa-star fa"></a>
+                                                <a href="#" class="fa-star fa"></a>
+                                            </div>
+                                        </div>
+                                        <%= f.text_field :level, class: "hidden form-control col-md-7 col-xs-12" %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <%= label :image, "Afbeelding", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <%= f.file_field :image %>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                    <%= f.submit @action + " Training", class: "text-center btn btn-success" %>
+                                </div>
+                                <% end %>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg in" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Mijn Oefeningen</h4>
+                <div class="title_right">
+                    <%= form_tag exercises_path, method: "get", remote: true, id: "search-form" do %>
+                    <%= check_box_tag "custom_exercises", :CustomExercise, true, class: "js-switch"   %>
+                    <%= current_user_is_client? ? "Oefeningen van mijn trainer" : "Mijn Oefeningen" %>
+                    <%= check_box_tag "standard_exercises", :GeneralExercise, true, class: "js-switch"   %>
+                    Standaard oefeningen
+                    <br/><br/>
+                    <div class="input-group">
+                        <span class="input-group-addon" title="*NAAM" id="priceLabel">Naam</span>
+                        <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "Deel van naam.." %>
+                        <span class="input-group-addon">Spiergroep</span>
+                        <span class="input-group-addon" style="width:0px; padding-left:0px; padding-right:0px; border:none;"></span>
+                        <%= select_tag :focus, '<option value="all">Alle Spieren</option><option value="abdominals">Buikspieren</option> <option value="quadriceps">Quadriceps</option> <option value="hamstrings">Hamstrings</option> <option value="lats">Latissimus
+                        Dorsi</option> <option value="back">Rug</option> <option value="chest">Borstspieren</option> <option value="shoulders">Schouders</option> <option value="biceps">Biceps</option> <option value="triceps">Triceps</option>'.html_safe, class:
+                        "form-control" %>
+                        <div class="input-group-btn">
+                            <%= button_tag(type: "submit", id: "ajax-exercises", class: "btn btn-primary submit-btn") do %>
+                            <i class='fa fa-search'></i>
+                            <% end %>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="modal-body cf">
+                <div class="row profile-grid"></div>
+                <p class="no-exercises"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<%= content_for :js do %>
+<%= javascript_include_tag "star","switch", "jquery-ui", "select2" %>
+<script>
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+         document.getElementById('contents').style.visibility="visible";
+      },1000);
+  }
+}
+    $(document).ready(function () {
+        $(".stars").starrr();
+
+        $(".stars .fa").on("click", function () {
+            value = $('.fa-star.fa').length
+            $('input#training_level').attr("value", value)
+        })
+    });
+
+    $(document).ready(function () {
+        $("#exercises").select2({multiple: true, width: "100%", allowClear: true, data: <%= current_exercises(@training).to_json.html_safe %>, placeholder: "Kies Je Oefeningen"})
+    })
+
+    // Keep order instead of sorting
+    $("select").on("select2:select", function (evt) {
+        var element = evt.params.data.element;
+        var $element = $(element);
+
+        $element.detach();
+        $(this).append($element);
+        $(this).trigger("change");
+    });
+
+    $('.js-switch').each(function () {
+        new Switchery(this);
+    })
+
+
+    function selectExercise(elem, id, title) {
+        data = {
+            value: "exercise-" + id + "",
+            text: title,
+            selected: "selected"
+        }
+        if (elem.hasClass("selected")) {
+            elem.removeClass("selected")
+            // elem = $("li.select2-selection__choice[title='" + title +"']")
+            // console.log(elem)
+            // elem.detach()
+
+            new_data = $.grep($('#exercises').select2('data'), function (value) {
+                return value['id'] != ('exercise-' + id);
+            });
+            new_data_array = []
+            new_value_array = []
+            for (var i = 0, l = new_data.length; i < l; i++) {
+              console.log(new_data[i])
+              hash = { value: new_data[i].id,
+                  text: new_data[i].title,
+                  selected: "selected"}
+              new_data_array.push(hash)
+              new_value_array.push(new_data[i].id)
+            }
+            $('#exercises').val(new_value_array);
+            $('#exercises').trigger("change");
+            $('#exercises').select2('data', new_data_array)
+            $('#exercises').trigger("change");
+        } else {
+            $("#exercises").append($('<option>', data));
+            elem.addClass("selected")
+        }
+    }
+
+    $("#ajax-exercises").on("click", function () {
+        name = $("#name").val()
+        focus = $("#focus").val()
+        if (($("#custom_exercises")).is(':checked')) {
+            custom = "CustomExercise"
+        } else {
+            custom = ""
+        }
+        if (($("#standard_exercises")).is(':checked')) {
+            standard = "GeneralExercise"
+        } else {
+            standard = ""
+        }
+        $(".profile-grid").empty()
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "/exercises?utf8=✓&button=&custom_exercises=" + custom + "&standard_exercises=" + standard + "&name=" + name + "&focus=" + focus + "&ajax=true&limit=50",
+            success: function (data) {
+                data.flatten
+                if (data.length == 0) {
+                    $(".profile-grid").attr("style", "height: 0px; overflow: none;")
+                    $("p.no-exercises").text("Er zijn geen oefeningen teruggevonden voor die criteria")
+                }
+                objects = data.slice(0, data.length / 2)
+                images = data.slice(data.length / 2, -1)
+                for (var i = 0, l = objects.length; i < l; i++) {
+                    id = objects[i].id
+                    type = objects[i].exercise_type
+                    title = objects[i].title
+                    focus = objects[i].focus
+                    trainer = objects[i].trainer_id
+                    if (trainer == null) {
+                        image = objects[i].remote_images.split(",")[0]
+                    } else {
+                        image = images[i]
+                        if (image == null) {
+                            image = "https://s3-eu-west-1.amazonaws.com/truetech-v4/blog/placeholder.png"
+                        }
+                    }
+                    var html = "";
+                    html += "<div onClick='selectExercise($(this)," + id + ",\"" + title + "\")' class=\"col-md-3 col-sm-4 col-xs-6 exercise-block\">";
+                    html += "                                        <div class=\"thumbnail\">";
+                    html += "                                            <div class=\"image view view-first\">";
+                    html += "                                                <img width=\"100%\" src=" + image + " alt=\"110 1\">";
+                    html += "                                                <div class=\"mask no-caption\">";
+                    html += "                                                    <div class=\"tools tools-bottom\">";
+                    html += "                                                        <a href=\"\/exercises\/" + id + "\">";
+                    html += "                                                        <i class=\"fa fa-search\"><\/i>";
+                    html += "<\/a>                                                       "
+                    html += "                                                    <\/div>";
+                    html += "                                                <\/div>";
+                    html += "                                            <\/div>";
+                    html += "                                            <div class=\"caption cf\">";
+                    html += "                                                <p>";
+                    html += "                                                    <strong>" + title + "<\/strong>";
+                    html += "                                                <\/p>";
+                    html += "                                                <p>";
+                    html += "                                                    <strong>Focus:<\/strong>";
+                    html += "                                                    " + focus + "";
+                    html += "                                                <\/p>";
+                    html += "                                                <p>";
+                    html += "                                                    <strong>Type:<\/strong>";
+                    html += "                                                    " + type + "";
+                    html += "                                                <\/p>";
+                    html += "                                            <\/div>";
+                    html += "                                        <\/div>";
+                    html += "                                    <\/div>";
+                    $(".profile-grid").append(html)
+                    $(".profile-grid").attr("style", "height: 450px; overflow: scroll;")
+                    $("p.no-exercises").text("")
+                }
+            }
+        });
+    })
+</script>
+
+<% end %>

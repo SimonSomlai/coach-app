@@ -1,0 +1,18 @@
+// This main CSS file contains all style specifications for the
+// Coach App.
+// There's a styling file for every model that's
+// being generated (page.scss, post.scss, ...). Model styles are organized
+// by page-type whilst the css is ordered by location in the DOM. All
+// properties are sorted using CSSComb. Ex;
+
+// post.scss
+// - index-page
+// {DOM ordered & property sorted css}
+// - show-page
+// {DOM ordered & property sorted css}
+// Base styling
+@import "base/mixins.scss";
+
+// General Styling (headers, footers & nav)
+
+// Model styling

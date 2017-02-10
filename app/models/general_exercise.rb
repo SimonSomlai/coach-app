@@ -1,0 +1,3 @@
+class GeneralExercise < Exercise
+
+end

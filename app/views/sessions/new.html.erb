@@ -1,0 +1,32 @@
+<% content_for :body_class do %>
+<%= "login"  %>
+<% end %>
+<% content_for :css do %>
+<%= stylesheet_link_tag "gentella", "style"  %>
+<% end %>
+<div>
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <%= form_for :session, url: login_path do |f| %>
+                <h1>Inloggen</h1>
+                <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+                <%= f.password_field :password, class: "form-control", placeholder: "Wachtwoord" %>
+                <%= f.label :remember_me, "Herrinner Mij", :class => "inline"%>
+                <%= f.check_box :remember_me, :class => "checkbox-inline" %>
+                <%= f.submit "Inloggen", class: "form-control" %>
+                <% end %>
+
+                <div class="clearfix"></div>
+                <div class="separator">
+                    <p class="change_link">Nieuw Hier?
+                        <%= link_to "Account Aanmaken", register_path %>
+                    </p>
+                    <div class="clearfix"></div>
+                    <br>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+</div>

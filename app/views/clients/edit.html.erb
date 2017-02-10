@@ -1,0 +1,113 @@
+<div class="container body">
+    <div class="main_container">
+        <%= render "shared/admin_menu" %>
+        <div class="right_col" role="main" style="min-height: 973px;">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>Mijn Klanten
+                            <span class="<%= table_hidden? %>">|
+                                <a onclick="createForm()" href="#" class="open-form btn btn-sm btn-round btn-success">
+                                    <i class="fa fa-plus"></i>
+                                    <%= @action %>
+                                    Klant</a>
+                            </span>
+                        </h2>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div id="create-form" class="row create-form <%= form_hidden? %>">
+                <div class="col-md-12 col-sm-12 col-xs-12 margin-top" style="display: block;">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>
+                                <i class="fa fa-user"></i>
+                                <%= @action %>
+                                Klant
+                                <span class="col-hidden">|</span>
+                                <%= link_to user_clients_path(current_user), class: "open-form btn btn-sm btn-round btn-success" do %>
+                                <i class="fa fa-chevron-left"></i>
+                                Terug Naar Alle Klanten
+                                <% end %>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <br>
+                            <%= form_for @client, url: user_client_path(@client), html: { multipart: true, class: "form-horizontal form-label-left", id:"demo-form2"}  do |f| %>
+                            <%= render "shared/errors", object: @client %>
+                            <div class="form-group">
+                                <%= f.label :name, "Naam", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.text_field :name, class: "form-control col-md-7 col-xs-12"   %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :email, "Email", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.email_field :email, class: "form-control col-md-7 col-xs-12"   %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :address, "Adres", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.text_field :address, class: "form-control col-md-7 col-xs-12"   %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :phone, "GSM", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.text_field :phone, class: "form-control col-md-7 col-xs-12"   %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :information, "Extra Notities", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.text_area :information, class: "form-control col-md-7 col-xs-12"   %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :password, "Wachtwoord", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.password_field :password, class: "form-control col-md-7 col-xs-12"   %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :password_confirmation, "Wachtwoord Bevestiging", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.password_field :password_confirmation, class: "form-control col-md-7 col-xs-12"   %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                    <p>
+                                        <strong>
+                                            Huidige Profielfoto
+                                        </strong>
+                                    </p>
+                                    <%= image_tag @client.image.url %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :image, "Profielfoto", class: "control-label col-md-3 col-sm-3 col-xs-12" %>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%= f.file_field :image, class: "form-control col-md-7 col-xs-12", accept: "image/jpeg,image/gif,image/png"   %>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                    <%= f.submit @action + ' Klant', class:"text-center btn btn-success" %>
+                                </div>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

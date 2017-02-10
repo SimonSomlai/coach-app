@@ -1,0 +1,41 @@
+<% content_for :body_class do %>
+<%= "login"  %>
+<% end %>
+<% content_for :css do %>
+<%= stylesheet_link_tag "gentella", "style"  %>
+<% end %>
+<div>
+    <div class="login_wrapper">
+        <div id="register" class="form">
+            <section class="login_content">
+                <%= form_for @user do |f| %>
+                <h1>Create Account</h1>
+                <%= render "shared/errors", object: @user  %>
+                <div>
+                    <%= f.text_field :name, placeholder: "Voornaam", class: "form-control" %>
+                </div>
+                <div>
+                    <%= f.email_field :email, placeholder: "Email", class: "form-control" %>
+                </div>
+                <div>
+                    <%= f.password_field :password, placeholder: "Wachtwoord", class: "form-control" %>
+                </div>
+                <div>
+                    <%= f.password_field :password_confirmation, placeholder: "Wachtwoord Bevestigen", class: "form-control" %>
+                </div>
+                <div>
+                    <%= f.submit "Account Aanmaken", class: "btn btn-default submit" %>
+                </div>
+                <% end %>
+                <div class="clearfix"></div>
+                <div class="separator">
+                    <p class="change_link">Heb je al een account?
+                      <%= link_to "Log in", login_path %>
+                    </p>
+                    <div class="clearfix"></div>
+                    <br>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

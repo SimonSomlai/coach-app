@@ -1,0 +1,255 @@
+<% content_for :css do %>
+<%= stylesheet_link_tag "gentella", "style" %>
+<% end %>
+<% content_for :body_class do  %>
+<%= "nav-md" %>
+<% end %>
+<div class="container body">
+    <div class="main_container">
+        <%= render "shared/client_menu" %>
+        <div class="right_col" role="main" style="min-height: 1164px;">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>Mijn Profiel</h3>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2><%= @client.name %>
+                                </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                                    <div class="profile_img">
+                                        <div id="crop-avatar">
+                                            <%= image_tag @client.image.url, class:"img-responsive avatar-view" %>
+                                        </div>
+                                    </div>
+                                    <h3><%= @client.name  %></h3>
+
+                                    <ul class="list-unstyled user_data">
+                                        <li>
+                                            <i class="fa fa-map-marker user-profile-icon"></i>
+                                            San Francisco, California, USA
+                                        </li>
+
+                                        <li>
+                                            <i class="fa fa-phone user-profile-icon"></i>
+                                            Software Engineer
+                                        </li>
+
+                                        <li class="m-top-xs">
+                                            <i class="fa fa-envelope user-profile-icon"></i>
+                                            <%= @client.email %>
+                                        </li>
+                                    </ul>
+                                    <%= link_to edit_user_path(id: @client.id), class: "btn btn-success" do %>
+                                    <i class="fa fa-edit m-right-xs"></i>
+                                    Profiel Bewerken
+                                    <% end %>
+                                    <br>
+                                </div>
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+
+                                    <div class="profile_title">
+                                        <div class="col-md-6">
+                                            <h2>Mijn Afgelegde Trainingen</h2>
+                                        </div>
+                                    </div>
+                                    <!-- start of user-activity-graph -->
+                                    <div id="graph_bar" style="width: 100%; height: 280px; position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                        <div class="morris-hover morris-default-style" style="left: 160.258px; top: 102px; display: none;">
+                                            <div class="morris-hover-row-label">Mar</div>
+                                            <div class="morris-hover-point" style="color: #26B99A">
+                                                Hours worked: 176
+                                            </div>
+                                            <div class="morris-hover-point" style="color: #34495E">
+                                                SORN: -
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of user-activity-graph -->
+
+                                    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                            <!-- <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Berichten</a>
+                  </li> -->
+                                            <li role="presentation" class="active">
+                                                <a href="#tab_content2" role="tab" id="home-tab" data-toggle="tab" aria-expanded="true">Mijn Actieve Trainingen</a>
+                                            </li>
+                                        </ul>
+                                        <div id="myTabContent" class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="tab_content2" aria-labelledby="home-tab">
+
+                                                <!-- start user projects -->
+                                                <table class="data table table-striped no-margin">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Training</th>
+                                                            <th>Datum</th>
+                                                            <th>Intensiteit</th>
+                                                            <th class="hidden-phone">Status</th>
+                                                            <th>Bewerken</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <% @trainings.each_with_index do |training, i| %>
+                                                        <tr>
+                                                            <td><%= i + 1 %></td>
+                                                            <td><%= training.title %></td>
+                                                            <td><%= training.date %></td>
+                                                            <td class="vertical-align-mid">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar progress-bar-success" data-transitiongoal="35" aria-valuenow="35" style="width: 35%;"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="hidden-phone"><%= training.status ? "Voltooid" : "Onvoltooid" %></td>
+                                                            <td>
+                                                              <%= link_to training_path(training.training_id), class: "btn btn-success btn-xs" do %>
+                                                              <i class="fa fa-search"></i>
+                                                              <% end %>
+                                                              <%= link_to training_afwerken_path(training_id: training), method: :post, data: {confirm: "Deze training markeren als voltooid?"}, class: "btn btn-primary btn-xs" do %>
+                                                              <i class="fa fa-check"></i>
+                                                              <% end %>
+                                                            </td>
+                                                        </tr>
+                                                        <% end %>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% content_for :js do %>
+<script>
+    $(document).ready(function () {
+        //define chart clolors ( you maybe add more colors if you want or flot will add it automatic )
+        var chartColours = [
+            '#96CA59',
+            '#3F97EB',
+            '#72c380',
+            '#6f7a8a',
+            '#f7cb38',
+            '#5a8022',
+            '#2c7282'
+        ];
+
+        //generate random number for charts
+        randNum = function () {
+            return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
+        };
+
+        var d1 = [];
+        //var d2 = []; here we generate data for chart
+        for (var i = 0; i < 30; i++) {
+            d1.push([
+                new Date(Date.today().add(i).days()).getTime(),
+                randNum() + i + i + 10
+            ]);
+            //    d2.push([new Date(Date.today().add(i).days()).getTime(), randNum()]);
+        }
+
+        var chartMinDate = d1[0][0]; //first day
+        var chartMaxDate = d1[20][0]; //last day
+
+        var tickSize = [1, "day"];
+        var tformat = "%d/%m/%y";
+
+        //graph options
+        var options = {
+            grid: {
+                show: true,
+                aboveData: true,
+                color: "#3f3f3f",
+                labelMargin: 10,
+                axisMargin: 0,
+                borderWidth: 0,
+                borderColor: null,
+                minBorderMargin: 5,
+                clickable: true,
+                hoverable: true,
+                autoHighlight: true,
+                mouseActiveRadius: 100
+            },
+            series: {
+                lines: {
+                    show: true,
+                    fill: true,
+                    lineWidth: 2,
+                    steps: false
+                },
+                points: {
+                    show: true,
+                    radius: 4.5,
+                    symbol: "circle",
+                    lineWidth: 3.0
+                }
+            },
+            legend: {
+                position: "ne",
+                margin: [
+                    0, -25
+                ],
+                noColumns: 0,
+                labelBoxBorderColor: null,
+                labelFormatter: function (label, series) {
+                    // just add some space to labes
+                    return label + '&nbsp;&nbsp;';
+                },
+                width: 40,
+                height: 1
+            },
+            colors: chartColours,
+            shadowSize: 0,
+            tooltip: true, //activate tooltip
+            tooltipOpts: {
+                content: "%s: %y.0",
+                xDateFormat: "%d/%m",
+                shifts: {
+                    x: -30,
+                    y: -50
+                },
+                defaultTheme: false
+            },
+            yaxis: {
+                min: 0
+            },
+            xaxis: {
+                mode: "time",
+                minTickSize: tickSize,
+                timeformat: tformat,
+                min: chartMinDate,
+                max: chartMaxDate
+            }
+        };
+        var plot = $.plot($("#placeholder33x"), [
+            {
+                label: "Aantal trainingen",
+                data: d1,
+                lines: {
+                    fillColor: "rgba(150, 202, 89, 0.12)"
+                }, //#96CA59 rgba(150, 202, 89, 0.42)
+                points: {
+                    fillColor: "#fff"
+                }
+            }
+        ], options);
+    });
+</script>
+<% end %>

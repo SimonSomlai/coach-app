@@ -1,0 +1,87 @@
+<% content_for :css do %>
+<%= stylesheet_link_tag "gentella", "style" %>
+<% end %>
+<% content_for :body_class do  %>
+<%= "nav-md" %>
+<% end %>
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+            <div class="site_title">
+                <i class="fa fa-heart-o"></i>
+                <span>Coach App</span>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- menu profile quick info -->
+        <div class="profile">
+            <div class="profile_pic">
+                <%= image_tag current_user.image.url, class: "img-circle profile_img" %>
+            </div>
+            <div class="profile_info">
+                <span>Welkom,</span>
+                <h2><%= current_user.name  %></h2>
+            </div>
+        </div>
+
+        <br/>
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+                <h3>Algemeen</h3>
+                <ul class="nav side-menu">
+                    <li class="<%= active?('client-dashboard') %>">
+                        <%= link_to client_dashboard_path do %>
+                        <i class="fa fa-home"></i>
+                        Mijn Profiel
+                        <% end %>
+                    </li>
+                    <li class="<%= active?('exercises') %>">
+                        <%= link_to exercises_path do %>
+                        <i class="fa fa-object-group"></i>
+                        Alle Oefeningen
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="top_nav">
+    <div class="nav_menu">
+        <nav>
+            <div class="nav toggle">
+                <a id="menu_toggle">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <%= image_tag current_user.image.url  %>
+                        <%= current_user.name %>
+                        <span class=" fa fa-angle-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        <li>
+                            <%= link_to "Account Bewerken", edit_user_path(current_user) %>
+                        </li>
+                        <li>
+                            <%= link_to logout_path, method: :delete do %>
+                            <i class="fa fa-sign-out pull-right"></i>
+                            Log Out
+                            <% end %>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<% content_for :js do %>
+<%= javascript_include_tag "gentella", "jquery_ujs", "jquery.flot", "jquery.flot.time", "date", "script" %>
+<% end %>

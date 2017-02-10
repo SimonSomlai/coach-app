@@ -1,0 +1,207 @@
+<% content_for :css do %>
+<%= stylesheet_link_tag "gentella", "switch", "style" %>
+<% end %>
+<% content_for :body_class do  %>
+<%= "nav-md" %>
+<% end %>
+<div class="container body">
+    <div class="main_container">
+        <% if current_user_is_trainer? %>
+        <%= render "shared/admin_menu" %>
+    <% else %>
+        <%= render "shared/client_menu" %>
+        <% end %>
+        <div class="right_col" role="main" style="min-height: 1035px;">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>
+                            Alle Oefeningen
+                        </h3>
+                        <%= form_tag exercises_path, method: "get", id: "search-form" do %>
+                        <%= check_box_tag "custom_exercises", :CustomExercise, true, class: "js-switch"   %>
+                        <%= current_user_is_client? ? "Oefeningen van mijn trainer" : "Mijn Oefeningen" %>
+                        <%= check_box_tag "standard_exercises", :GeneralExercise, true, class: "js-switch"   %>
+                        Standaard oefeningen
+                        <br/><br/>
+                        <div class="input-group">
+                            <span class="input-group-addon" title="*NAAM" id="priceLabel">Naam</span>
+                            <%= text_field_tag :name, params[:name], class: "form-control", placeholder: "Deel van naam.." %>
+                            <span class="input-group-addon">Spiergroep</span>
+                            <span class="input-group-addon" style="width:0px; padding-left:0px; padding-right:0px; border:none;"></span>
+                            <%= select_tag :focus, '<option value="all">Alle Spieren</option><option value="abdominals">Buikspieren</option> <option value="quadriceps">Quadriceps</option> <option value="hamstrings">Hamstrings</option> <option value="lats">Latissimus
+                            Dorsi</option> <option value="back">Rug</option> <option value="chest">Borstspieren</option> <option value="shoulders">Schouders</option> <option value="biceps">Biceps</option> <option value="triceps">Triceps</option>'.html_safe, class:
+                            "form-control" %>
+                            <div class="input-group-btn">
+                                <%= button_tag(type: "submit", class: "btn btn-primary submit-btn") do %>
+                                <i class='fa fa-search'></i>
+                                <% end %>
+                            </div>
+                        </div>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row table-fade <%= table_hidden? %>">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>
+                                    <i class="fa fa-object-group"></i>
+                                    Oefeningen
+                                    <% if current_user_is_trainer? %>
+                                    <a onclick="createForm()" href="#" class="open-form btn btn-sm btn-round btn-success">
+                                        <i class="fa fa-plus"></i>
+                                        <%= @action %>
+                                        Oefening</a>
+                                    <% end %>
+                                </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row profile-grid">
+                                    <% if !@exercises.blank? %>
+                                    <% @exercises.each do |exercise| %>
+                                    <div class="col-md-3 col-sm-4 col-xs-6">
+                                        <div class="thumbnail">
+                                            <div class="image view view-first">
+                                                <%= image_tag get_first_image(exercise), width: "100%" %>
+                                                <div class="mask no-caption">
+                                                    <div class="tools tools-bottom">
+                                                        <%= link_to exercise_path(exercise) do %>
+                                                        <i class="fa fa-search"></i>
+                                                        <% end %>
+                                                        <% if current_user_is_trainer? %>
+                                                        <%  unless exercise.type == "GeneralExercise" && !current_user_is_admin? %>
+                                                        <%= link_to edit_exercise_path(exercise) do %>
+                                                        <i class="fa fa-pencil"></i>
+                                                        <% end %>
+                                                        <%= link_to exercise_path(exercise), method: :delete, data: {confirm: "Ben je zeker dat je deze oefening wilt verwijderen?"} do %>
+                                                        <i class="fa fa-times"></i>
+                                                        <% end %>
+                                                        <% end %>
+                                                        <% end %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="caption cf">
+                                                <p>
+                                                    <strong><%= exercise.title %></strong>
+                                                </p>
+                                                <p>
+                                                    <strong>Focus:</strong>
+                                                    <%= exercise.focus %>
+                                                </p>
+                                                <p>
+                                                    <strong>Type:</strong>
+                                                    <%= exercise.exercise_type %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% end %>
+                                    <%= will_paginate @exercises, renderer: BootstrapPagination::Rails, class: "pagination pagination-centered" %>
+                                <% else %>
+                                    <p>Er zijn geen oefeningen gevonden die hiermee overeenkomen
+                                        <(^.^)></p>
+                                        <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% if current_user_is_trainer? %>
+                    <div id="create-form" class="row create-form <%= form_hidden?  %>">
+                        <div class="col-md-12 col-sm-12 col-xs-12 margin-top" style="display: block;">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>
+                                        <i class="fa fa-object-group"></i>
+                                        <%= @action %>
+                                        Oefening
+                                        <span class="col-hidden">|</span>
+                                        <a class="open-form btn btn-sm btn-round btn-success col-hidden" data-confirm="Your changes will not be saved - proceed?" href="/nl/users">All Klanten</a>
+                                    </h2>
+                                    <ul class="nav navbar-right panel_toolbox <%= table_hidden?  %>">
+                                        <li>
+                                            <a onclick="closeForm();">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <br>
+                                    <%= form_for @exercise, url: @url, html: { multipart: true, id: "demo-form2", class: "form-horizontal form-label-left"} do |f| %>
+                                    <%= render "shared/errors", object: @exercise %>
+                                    <div class="form-group">
+                                        <%= f.label :title, "Naam*", class: "control-label col-md-3 col-sm-3 col-xs-12"  %>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <%= f.text_field :title, class: "form-control col-md-7 col-xs-12" %>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.label :description, "Beschrijving*", class: "control-label col-md-3 col-sm-3 col-xs-12"  %>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <%= f.text_area :description, class: "form-control col-md-7 col-xs-12" %>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.label :equipment, "Materiaal", class: "control-label col-md-3 col-sm-3 col-xs-12"  %>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <%= f.text_field :equipment, class: "form-control col-md-7 col-xs-12" %>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.label :focus, "Trainingsfocus*", class: "control-label col-md-3 col-sm-3 col-xs-12"  %>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <%= f.select :focus, options_for_select('<option value="all">Alle Spieren</option><option value="abdominals">Buikspieren</option> <option value="quadriceps">Quadriceps</option> <option value="hamstrings">Hamstrings</option> <option value="lats">Latissimus
+                                            Dorsi</option> <option value="back">Rug</option> <option value="chest">Borstspieren</option> <option value="shoulders">Schouders</option> <option value="biceps">Biceps</option> <option value="triceps">Triceps</option>'.html_safe), {}, { class: "form-control" } %>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.label :exercise_type, "Trainingstype*", class: "control-label col-md-3 col-sm-3 col-xs-12"  %>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <%= f.text_field :exercise_type, placeholder: "Krachttraining, CrossFit, Plyometrics, ..", class: "form-control col-md-7 col-xs-12" %>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.label :video, "Instructievideo", class: "control-label col-md-3 col-sm-3 col-xs-12"  %>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <%= f.text_field :video, class: "form-control col-md-7 col-xs-12" %>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.label "Huidige Afbeeldingen", class: "control-label col-md-3 col-sm-3 col-xs-12"  %>
+                                        <%  @exercise.exercise_images.each do |image| %>
+                                        <%= image_tag image.image_url, height: "150px", width: "150px", style: "display: inline-block;" %>
+                                        <% end %>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.label :exercise_images, "Instructieafbeeldingen", class: "control-label col-md-3 col-sm-3 col-xs-12"  %>
+                                        <%= f.file_field :exercise_images, multiple: true, name: "exercise_images[image][]" %>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                            <%= f.submit @action + " Oefening", class: "text-center btn btn-success" %>
+                                        </div>
+                                    </div>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%= content_for :js do %>
+    <%= javascript_include_tag "switch" %>
+    <script>
+        $('.js-switch').each(function () {
+            new Switchery(this);
+        })
+    </script>
+    <% end %>

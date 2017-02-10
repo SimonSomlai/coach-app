@@ -1,0 +1,211 @@
+<% content_for :css do %>
+<%= stylesheet_link_tag "gentella", "style" %>
+<% end %>
+<% content_for :body_class do  %>
+<%= "nav-md" %>
+<% end %>
+<div class="container body">
+    <div class="main_container">
+        <%= render "shared/admin_menu" %>
+        <div class="right_col" role="main">
+            <div class="">
+                <div class="row top_tiles">
+                    <%= link_to user_clients_path(current_user) do %>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon">
+                                <i class="fa fa-address-book"></i>
+                            </div>
+                            <div class="count"><%= current_user.clients.size %></div>
+                            <h3>Klanten</h3>
+                        </div>
+                    </div>
+                    <% end %>
+                    <%= link_to exercises_path do %>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon">
+                                <i class="fa fa-object-group"></i>
+                            </div>
+                            <div class="count"><%= @trainer_exercises %></div>
+                            <h3>Oefeningen</h3>
+                        </div>
+                    </div>
+                    <% end %>
+                    <%= link_to trainings_path do %>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                            <div class="icon">
+                                <i class="fa fa-file"></i>
+                            </div>
+                            <div class="count"><%= current_user.trainings.all.size %></div>
+                            <h3>Trainingen</h3>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Recent Afgelegde Trainigen
+                                    <small>Week Overzicht</small>
+                                </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="col-md-9 col-sm-12 col-xs-12">
+                                    <div class="demo-container" style="height:280px">
+                                        <div id="placeholder33x" class="demo-placeholder"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                    <div>
+                                        <div class="x_title">
+                                            <h2>Actieve Klanten</h2>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <ul class="list-unstyled top_profiles scroll-view">
+                                            <% current_user.clients.limit(5).each do |client| %>
+                                            <li class="media event">
+                                                <%= image_tag client.image_url, class: "pull-left border-aero profile_thumb" %>
+                                                <div class="media-body">
+                                                    <a class="title" href="#"><%= client.name %></a>
+                                                    <p>
+                                                        <%= client.email %>
+                                                    </p>
+                                                    <p>
+                                                        <small>0 actieve trainingen</small>
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <% end %>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% content_for :js do %>
+<script>
+    $(document).ready(function () {
+        //define chart clolors ( you maybe add more colors if you want or flot will add it automatic )
+        var chartColours = [
+            '#96CA59',
+            '#3F97EB',
+            '#72c380',
+            '#6f7a8a',
+            '#f7cb38',
+            '#5a8022',
+            '#2c7282'
+        ];
+
+        //generate random number for charts
+        randNum = function () {
+            return (Math.floor(Math.random() * (1 + 40 - 20))) + 20;
+        };
+
+        var d1 = [];
+        //var d2 = []; here we generate data for chart
+        for (var i = 0; i < 30; i++) {
+            d1.push([
+                new Date(Date.today().add(i).days()).getTime(),
+                randNum() + i + i + 10
+            ]);
+            //    d2.push([new Date(Date.today().add(i).days()).getTime(), randNum()]);
+        }
+
+        var chartMinDate = d1[0][0]; //first day
+        var chartMaxDate = d1[20][0]; //last day
+
+        var tickSize = [1, "day"];
+        var tformat = "%d/%m/%y";
+
+        //graph options
+        var options = {
+            grid: {
+                show: true,
+                aboveData: true,
+                color: "#3f3f3f",
+                labelMargin: 10,
+                axisMargin: 0,
+                borderWidth: 0,
+                borderColor: null,
+                minBorderMargin: 5,
+                clickable: true,
+                hoverable: true,
+                autoHighlight: true,
+                mouseActiveRadius: 100
+            },
+            series: {
+                lines: {
+                    show: true,
+                    fill: true,
+                    lineWidth: 2,
+                    steps: false
+                },
+                points: {
+                    show: true,
+                    radius: 4.5,
+                    symbol: "circle",
+                    lineWidth: 3.0
+                }
+            },
+            legend: {
+                position: "ne",
+                margin: [
+                    0, -25
+                ],
+                noColumns: 0,
+                labelBoxBorderColor: null,
+                labelFormatter: function (label, series) {
+                    // just add some space to labes
+                    return label + '&nbsp;&nbsp;';
+                },
+                width: 40,
+                height: 1
+            },
+            colors: chartColours,
+            shadowSize: 0,
+            tooltip: true, //activate tooltip
+            tooltipOpts: {
+                content: "%s: %y.0",
+                xDateFormat: "%d/%m",
+                shifts: {
+                    x: -30,
+                    y: -50
+                },
+                defaultTheme: false
+            },
+            yaxis: {
+                min: 0
+            },
+            xaxis: {
+                mode: "time",
+                minTickSize: tickSize,
+                timeformat: tformat,
+                min: chartMinDate,
+                max: chartMaxDate
+            }
+        };
+        var plot = $.plot($("#placeholder33x"), [
+            {
+                label: "Aantal trainingen",
+                data: d1,
+                lines: {
+                    fillColor: "rgba(150, 202, 89, 0.12)"
+                }, //#96CA59 rgba(150, 202, 89, 0.42)
+                points: {
+                    fillColor: "#fff"
+                }
+            }
+        ], options);
+    });
+</script>
+<% end %>

@@ -1,0 +1,92 @@
+<% content_for :css do %>
+<%= stylesheet_link_tag "gentella", "lightgallery", "style" %>
+<% end %>
+<% content_for :body_class do  %>
+<%= "nav-md" %>
+<% end %>
+<div class="container body">
+    <div class="main_container">
+        <% if current_user_is_trainer? %>
+        <%= render "shared/admin_menu" %>
+    <% else %>
+        <%= render "shared/client_menu" %>
+        <% end %>
+        <div class="right_col" role="main" style="min-height: 1097px;">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>Oefeningsoverzicht</h3>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Oefening</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div id="mainb" class="cf" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background-color: transparent;" _echarts_instance_="ec_1486037626311">
+                                        <% if @youtube %>
+                                        <iframe src="https://www.youtube.com/embed/<%= parse_youtube @exercise.video %>" frameborder="0" , height="450px" , width="100%"></iframe>
+                                    <% else %>
+                                        <video poster="data:image/gif,AAAA" style="background: no-repeat url('<%= image_path 'exercise' %>');background-size:100%" , width="100%" , controls>
+                                            <source src="<%= @exercise_video %>" type="video/mp4">
+                                            <source src="movie.ogg" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <% end %>
+                                    </div>
+                                    <section id="lightbox" data-featherlight-gallery data-featherlight-filter="a">
+                                        <% @exercise_images.each do |image| %>
+                                        <a href="<%= image.image_url %>" class="gallery">
+                                            <%= image_tag image.image_url(:large), alt: "#{@exercise.title}", width: "150px", height: "150px" %>
+                                        </a>
+                                        <% end %>
+                                        <% @remote_images.each do |image| %>
+                                        <a href="<%= image %>" class="gallery">
+                                            <%= image_tag image, alt: "#{@exercise.title}", width: "150px", height: "150px" %>
+                                        </a>
+                                        <% end %>
+                                    </section>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <section class="panel">
+                                        <div class="panel-body">
+                                            <h3 class="green">
+                                                <%= @exercise.title %></h3>
+                                            <br>
+                                            <div class="project_detail">
+
+                                                <p class="title">Materiaal</p>
+                                                <p><%= @exercise.equipment  %></p>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div class="x_title">
+                                        <h2>Beschrijving</h2>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="exercise-show-description">
+                                        <%= raw @exercise.description  %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%= content_for :js do %>
+<%= javascript_include_tag "lightbox.min" %>
+<script>
+    $('a.gallery').featherlightGallery({previousIcon: '«', nextIcon: '»', galleryFadeIn: 300, openSpeed: 300});
+</script>
+<% end %>
