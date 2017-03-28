@@ -24,6 +24,5 @@ Rails.application.routes.draw do
   delete "/remove-exercise" => "exercises#remove" # Remove exercise from a training
   post "/training-geven" => "trainings#assign_training" # Add active training to client
   delete "/training-verwijderen" => "trainings#remove_training" # Remove active training from client
-
-  post "/training-afwerken" => "trainings#complete_training"
+  post "/training-afwerken" => "trainings#complete_training" # Mark training as completed
 end

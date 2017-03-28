@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="author" content="Simon Somlai" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INSERT TITLE</title>
+  <link type="text/css" rel="stylesheet" href="../assets/css/reset.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="../assets/css/gentella.css">
+  <link type="text/css" rel="stylesheet" href="../assets/css/vendor/select2.css">
+  <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><i class="fa fa-heart-o"></i> <span>Coach App</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile">
+            <div class="profile_pic">
+              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>Welcome,</span>
+              <h2>John Doe</h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a href="../index.html"><i class="fa fa-home"></i> Dashboard</a>
+                </li>
+                <li><a><i class="fa fa-address-book"></i> Klanten</a>
+                </li>
+                <li><a><i class="fa fa-object-group"></i> Oefeningen</a>
+                </li>
+                <li><a><i class="fa fa-file-text-o"></i> Trainingen</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="images/img.jpg" alt="">John Doe
+                  <span class=" fa fa-angle-down"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><a href="javascript:;"> Profile</a></li>
+                  <li>
+                    <a href="javascript:;">
+                      <span class="badge bg-red pull-right">50%</span>
+                      <span>Settings</span>
+                    </a>
+                  </li>
+                  <li><a href="javascript:;">Help</a></li>
+                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                </ul>
+              </li>
+
+              <li role="presentation" class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="badge bg-green">6</span>
+                </a>
+                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                  <li>
+                    <a>
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                          <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                          <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                          <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                          <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="text-center">
+                      <a>
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="right_col" role="main" style="min-height: 914px;">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Trainingen | <a onclick="createForm()" href="#" class="open-form btn btn-sm btn-round btn-success"><i class="fa fa-plus"></i> Nieuwe Training</a></h3>
+            </div>
+            <div class="title_right">
+              <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="row table-fade">
+            <div class="col-md-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Trainingen</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <table class="table table-striped projects">
+                    <thead>
+                      <tr>
+                        <th style="width: 1%">#</th>
+                        <th style="width: 20%">Naam</th>
+                        <th>Oefeningen</th>
+                        <th>Niveau</th>
+                        <th>Tijdsduur</th>
+                        <th style="width: 20%">#Bewerken</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <a>Core Bootcamp</a>
+                        </td>
+                        <td>
+                          <p>
+                            Abb rollout, twisted crunch, Crunch, viper swings, ...
+                          </p>
+                        </td>
+                        <td class="project_progress">
+                          <div class="progress progress_sm">
+                            <div class="progress-bar bg-green" role="progressbar" style="width: 75%;"></div>
+                          </div>
+                          <small>4</small>
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-success btn-xs">1 uur</button>
+                        </td>
+                        <td>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                          <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                          <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="create-form" class="row create-form col-hidden">
+            <div class="col-md-12 col-sm-12 col-xs-12 margin-top" style="display: block;">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2><i class="fa fa-user"></i> Nieuwe Training <span class="col-hidden">|</span> <a class="open-form btn btn-sm btn-round btn-success col-hidden" data-confirm="Your changes will not be saved - proceed?" href="/nl/users">All Klanten</a></h2>
+                  <ul class="nav navbar-right panel_toolbox ">
+                    <li><a onclick="closeForm();"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <br>
+                  <form class="form-horizontal form-label-left" id="demo-form2" enctype="multipart/form-data" action="/nl/users" accept-charset="UTF-8" method="post"><input Naam="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="xtAUB2aB7b5LXyABshp7Jjs8uhCxur82/Nd2kR2wZ2x8oBXGtQn/tP2AZ1bRs6W5cMfv1x/J2eKlYBS6Cfyw8A==">
+
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_name">Naam</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input required="required" class="form-control col-md-7 col-xs-12" type="text" name="user[name]" id="user_name" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_password">Beschrijving</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <textarea class="form-control col-md-7 col-xs-12" name="" id="" cols="30" rows="5"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Selecteer Oefeningen</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select id="e1" class="form-control col-md-7 col-xs-12">
+                          <option></option>
+                          <option value="AL">Ab Rollouts</option>
+                          <option value="WY">Chest Press</option>
+                          <option>  Arnold Press</option>
+                          <option>  Bar Pushdown</option>
+                          <option>BB Back Squat</option>
+                          <option>BB Deadlift</option>
+                          <option>BB Forearm Curl</option>
+                          <option>BB Neck Press</option>
+                          <option>BB Row</option>
+                          <option>Bicycles</option>
+                          <option>Cable Curl</option>
+                          <option>Cable Curl (Single)</option>
+                          <option>Cable Fly</option>
+                          <option>Cable Row</option>
+                          <option>Crunches</option>
+                          <option>DB Fly</option>
+                          <option>DB French Press</option>
+                          <option>DB Front Raise</option>
+                          <option>DB Lunge</option>
+                          <option>DB Row</option>
+                          <option>DB Shoulder Press</option>
+                          <option>DB Shrug</option>
+                          <option>DB Side Raise</option>
+                          <option>Dips</option>
+                          <option>Dips (Lean Backward)</option>
+                          <option>Fitball-Crunch</option>
+                          <option>Flat BB Bench Press</option>
+                          <option>Front Pull Down</option>
+                          <option>Hamstring DB Curl</option>
+                          <option>Hanging Leg Raise </option>
+                          <option>Incline DB Curl</option>
+                          <option>Incline DB Curl (Single)</option>
+                          <option>Incline DB Press</option>
+                        </select>
+                        <br/><br/>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Zoek In Oefeningen</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="thumbnail">
+                          <div class="image view view-first">
+                            <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                            <div class="mask no-caption">
+                              <div class="tools tools-bottom">
+                                <a href="#"><i class="fa fa-link"></i></a>
+                                <a href="#"><i class="fa fa-pencil"></i></a>
+                                <a href="#"><i class="fa fa-times"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="caption cf">
+                            <p><strong>Image Name</strong>
+                            </p>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="reeksen">Reeksen</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="reeksen" type="number" name="reeksen" class="form-control" placeholder="">
+                            </div>
+
+                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="herhalingen">Herhalingen</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="herhalingen" type="number" name="reeksen" class="form-control" placeholder="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="thumbnail">
+                          <div class="image view view-first">
+                            <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                            <div class="mask no-caption">
+                              <div class="tools tools-bottom">
+                                <a href="#"><i class="fa fa-link"></i></a>
+                                <a href="#"><i class="fa fa-pencil"></i></a>
+                                <a href="#"><i class="fa fa-times"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="caption cf">
+                            <p><strong>Image Name</strong>
+                            </p>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="reeksen">Reeksen</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="reeksen" type="number" name="reeksen" class="form-control" placeholder="">
+                            </div>
+
+                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="herhalingen">Herhalingen</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="herhalingen" type="number" name="reeksen" class="form-control" placeholder="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="thumbnail">
+                          <div class="image view view-first">
+                            <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                            <div class="mask no-caption">
+                              <div class="tools tools-bottom">
+                                <a href="#"><i class="fa fa-link"></i></a>
+                                <a href="#"><i class="fa fa-pencil"></i></a>
+                                <a href="#"><i class="fa fa-times"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="caption cf">
+                            <p><strong>Image Name</strong>
+                            </p>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="reeksen">Reeksen</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="reeksen" type="number" name="reeksen" class="form-control" placeholder="">
+                            </div>
+
+                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="herhalingen">Herhalingen</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="herhalingen" type="number" name="reeksen" class="form-control" placeholder="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="thumbnail">
+                          <div class="image view view-first">
+                            <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                            <div class="mask no-caption">
+                              <div class="tools tools-bottom">
+                                <a href="#"><i class="fa fa-link"></i></a>
+                                <a href="#"><i class="fa fa-pencil"></i></a>
+                                <a href="#"><i class="fa fa-times"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="caption cf">
+                            <p><strong>Image Name</strong>
+                            </p>
+                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="reeksen">Reeksen</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="reeksen" type="number" name="reeksen" class="form-control" placeholder="">
+                            </div>
+
+                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="herhalingen">Herhalingen</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="herhalingen" type="number" name="reeksen" class="form-control" placeholder="">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_name">Niveau</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div>
+                          <div class="starrr stars">
+                            <a href="#" class="fa-star fa"></a>
+                            <a href="#" class="fa-star fa"></a>
+                            <a href="#" class="fa-star fa"></a>
+                            <a href="#" class="fa-star fa"></a>
+                            <a href="#" class="fa-star fa"></a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_profile_picture">Afbeelding</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input options="{:class=>&quot;form-control col-md-7 col-xs-12&quot;, :accept=>&quot;image/jpeg,image/gif,image/png&quot;}" type="file" name="user[profile_picture]" id="user_profile_picture">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        <input type="submit" name="commit" value="Nieuwe Training" class="text-center btn btn-success" data-disable-with="Nieuwe Klant">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- Modal Popup -->
+    <div class="x_content">
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+        </button>
+              <h4 class="modal-title" id="myModalLabel">Mijn Oefeningen</h4>
+              <div class="title_right">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                </div>
+              </div>
+            </div>
+            <div class="modal-body cf">
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                  <div class="image view view-first">
+                    <img style="width: 100%; display: block;" src="../assets/images/user.png" alt="image">
+                    <div class="mask no-caption">
+                      <div class="tools tools-bottom">
+                        <a href="#"><i class="fa fa-link"></i></a>
+                        <a href="#"><i class="fa fa-pencil"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caption cf">
+                    <p><strong>Image Name</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-2.2.0.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/gentella.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/star.js"></script>
+    <script type="text/javascript" src="../assets/js/vendor/select2.js"></script>
+    <script type="text/javascript" src="../assets/js/script.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".stars").starrr();
+
+        $('.stars-existing').starrr({
+          rating: 4
+        });
+
+        $('.stars').on('starrr:change', function(e, value) {
+          $('.stars-count').html(value);
+        });
+
+        $('.stars-existing').on('starrr:change', function(e, value) {
+          $('.stars-count-existing').html(value);
+        });
+      });
+
+      $(document).ready(function() {
+        $("#e1").select2({
+          width: "100%",
+          placeholder: "Kies Je Oefeningen",
+          multiple: true
+        });
+      });
+    </script>
+</body>
+
+</html>

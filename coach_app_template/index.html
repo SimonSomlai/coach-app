@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="author" content="Simon Somlai" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/gentella.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><i class="fa fa-heart-o"></i> <span>Coach App</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile">
+            <div class="profile_pic">
+              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>Welcome,</span>
+              <h2>John Doe</h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-home"></i> Dashboard</a>
+                </li>
+                <li><a href="details/clients_index.html"><i class="fa fa-address-book"></i> Klanten</a>
+                </li>
+                <li><a href="details/excercises_index.html"><i class="fa fa-object-group"></i> Oefeningen</a>
+                </li>
+                <li><a href="details/trainings_index.html"><i class="fa fa-file-text-o"></i> Trainingen</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="images/img.jpg" alt="">John Doe
+                  <span class=" fa fa-angle-down"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><a href="javascript:;"> Profile</a></li>
+                  <li>
+                    <a href="javascript:;">
+                      <span class="badge bg-red pull-right">50%</span>
+                      <span>Settings</span>
+                    </a>
+                  </li>
+                  <li><a href="javascript:;">Help</a></li>
+                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                </ul>
+              </li>
+
+              <li role="presentation" class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="badge bg-green">6</span>
+                </a>
+                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                  <li>
+                    <a>
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                          <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                          <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                          <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                      <span>
+                          <span>John Smith</span>
+                      <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="text-center">
+                      <a>
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="row top_tiles">
+            <a href="details/clients_index.html">
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-address-book"></i></div>
+                <div class="count">179</div>
+                <h3>Klanten</h3>
+                <p>Lorem ipsum psdea itgum rixt.</p>
+              </div>
+            </div>
+          </a>
+            <a href="details/excercises_index.html">
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-object-group"></i></div>
+                <div class="count">179</div>
+                <h3>Oefeningen</h3>
+                <p>Lorem ipsum psdea itgum rixt.</p>
+              </div>
+            </div>
+          </a>
+            <a href="details/trainings_index.html">
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-file"></i></div>
+                <div class="count">179</div>
+                <h3>Trainingen</h3>
+                <p>Lorem ipsum psdea itgum rixt.</p>
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Transaction Summary <small>Weekly progress</small></h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="demo-container" style="height:280px">
+                      <div id="placeholder33x" class="demo-placeholder"></div>
+                    </div>
+                    <div class="tiles">
+                      <div class="col-md-4 tile">
+                        <span>Total Sessions</span>
+                        <h2>231,809</h2>
+                        <span class="sparkline11 graph" style="height: 160px;">
+                                          <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                      </span>
+                      </div>
+                      <div class="col-md-4 tile">
+                        <span>Total Revenue</span>
+                        <h2>$231,809</h2>
+                        <span class="sparkline22 graph" style="height: 160px;">
+                                          <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                      </span>
+                      </div>
+                      <div class="col-md-4 tile">
+                        <span>Total Sessions</span>
+                        <h2>231,809</h2>
+                        <span class="sparkline11 graph" style="height: 160px;">
+                                          <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                      </span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div>
+                      <div class="x_title">
+                        <h2>Nieuwste Klanten</h2>
+                        <div class="clearfix"></div>
+                      </div>
+                      <ul class="list-unstyled top_profiles scroll-view">
+                        <li class="media event">
+                          <a class="pull-left border-aero profile_thumb">
+                            <i class="fa fa-user aero"></i>
+                          </a>
+                          <div class="media-body">
+                            <a class="title" href="#">Ms. Mary Jane</a>
+                            <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                            <p> <small>12 Sales Today</small>
+                            </p>
+                          </div>
+                        </li>
+                        <li class="media event">
+                          <a class="pull-left border-green profile_thumb">
+                            <i class="fa fa-user green"></i>
+                          </a>
+                          <div class="media-body">
+                            <a class="title" href="#">Ms. Mary Jane</a>
+                            <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                            <p> <small>12 Sales Today</small>
+                            </p>
+                          </div>
+                        </li>
+                        <li class="media event">
+                          <a class="pull-left border-blue profile_thumb">
+                            <i class="fa fa-user blue"></i>
+                          </a>
+                          <div class="media-body">
+                            <a class="title" href="#">Ms. Mary Jane</a>
+                            <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                            <p> <small>12 Sales Today</small>
+                            </p>
+                          </div>
+                        </li>
+                        <li class="media event">
+                          <a class="pull-left border-aero profile_thumb">
+                            <i class="fa fa-user aero"></i>
+                          </a>
+                          <div class="media-body">
+                            <a class="title" href="#">Ms. Mary Jane</a>
+                            <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                            <p> <small>12 Sales Today</small>
+                            </p>
+                          </div>
+                        </li>
+                        <li class="media event">
+                          <a class="pull-left border-green profile_thumb">
+                            <i class="fa fa-user green"></i>
+                          </a>
+                          <div class="media-body">
+                            <a class="title" href="#">Ms. Mary Jane</a>
+                            <p><strong>$2300. </strong> Agent Avarage Sales </p>
+                            <p> <small>12 Sales Today</small>
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Top Profiles <small>Sessions</small></h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item One Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Three Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Top Oefeningen</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item One Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Three Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Top Trainingen</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item One Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Two Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                  <article class="media event">
+                    <a class="pull-left date">
+                      <p class="month">April</p>
+                      <p class="day">23</p>
+                    </a>
+                    <div class="media-body">
+                      <a class="title" href="#">Item Three Title</a>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/jquery-2.2.0.js"></script> -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/jquery.flot.js"></script>
+  <script src="assets/js/vendor/jquery.flot.time.js"></script>
+  <script src="assets/js/vendor/date.js"></script>
+  <script type="text/javascript" src="assets/js/gentella.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+
+</html>

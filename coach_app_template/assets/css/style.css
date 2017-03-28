@@ -1,0 +1,69 @@
+/*---------------------*/
+/* STRUCTURE & GENERAL */
+/*---------------------*/
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #646E76; }
+
+body a {
+  text-decoration: none;
+  color: #646E76; }
+
+/*Clearfix*/
+.cf:after,
+.cf:before {
+  content: "";
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+.col-hidden {
+  display: none; }
+
+.starrr {
+  display: inline-block; }
+
+.starrr a {
+  margin-top: 6px;
+  font-size: 22px;
+  padding: 0 1px;
+  cursor: pointer;
+  color: #FFD119;
+  text-decoration: none; }
+
+/*---------------------*/
+/*    TRAINING MODEL     */
+/*---------------------*/
+input.select2-search__field {
+  width: inherit !important; }
+
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-selection.select2-selection--multiple {
+  border: 1px solid #ccc !important; }
+
+.form-horizontal .caption div {
+  padding-left: 0; }
+
+.form-horizontal .caption label {
+  padding-left: 0;
+  text-align: left; }
+
+.modal-body {
+  overflow-y: scroll;
+  height: 450px; }
+
+.form-horizontal .caption input.form-control {
+  margin-bottom: 5px; }
+
+.modal-content .title_right {
+  margin-top: 15px; }
+
+#mainb, #lightbox {
+  margin-bottom: 15px; }
+
+/*# sourceMappingURL=style.css.map */
