@@ -45,5 +45,4 @@
 - Test & Refactor
 - Sell it for 1 million billion
 
-
 Made with &lt;3 by <a target="_blank" href="http://www.truetech.be/en"> TrueTech</a>
