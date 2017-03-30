@@ -46,4 +46,4 @@
 - Sell it for 1 million billion
 
 
-Made with <3 by [TrueTech]("http://www.truetech.be/en")
+Made with &lt;3 by <a target="_blank" href="http://www.truetech.be/en"> TrueTech</a>
